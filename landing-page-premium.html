@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<!--
+  © 2026 @ojaimevitor
+  Landing Page Premium - Projeto Demonstrativo
+  https://twitter.com/ojaimevitor
+-->
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="@ojaimevitor">
+    <meta name="description" content="Landing page de alta conversão para serviços locais - Clínica de Estética">
+    <title>Conquiste a Pele dos Sonhos | Estética Avançada SP</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .hero-section {
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(16, 185, 129, 0.4);
+        }
+
+        .btn-secondary {
+            border: 2px solid #10b981;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: #10b981;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+        }
+
+        .seal-icon {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer.open {
+            max-height: 500px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- HERO SECTION -->
+    <section class="hero-section relative overflow-hidden bg-gradient-to-br from-emerald-50 via-white to-emerald-50 pt-20 pb-32 px-6">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-emerald-200 rounded-full blur-3xl opacity-20"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-emerald-300 rounded-full blur-3xl opacity-20"></div>
+        
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center max-w-4xl mx-auto fade-in-up">
+                <div class="inline-block mb-6 px-6 py-2 bg-emerald-100 rounded-full">
+                    <span class="text-emerald-700 font-semibold text-sm tracking-wide">✨ ESTÉTICA AVANÇADA EM SÃO PAULO</span>
+                </div>
+                
+                <h1 class="hero-title text-6xl md:text-7xl font-black text-gray-900 mb-6 leading-tight">
+                    Conquiste a <span class="gradient-text">Pele dos Sonhos</span> em 30 Dias
+                </h1>
+                
+                <p class="text-xl md:text-2xl text-gray-600 mb-12 leading-relaxed font-light">
+                    Tratamentos estéticos personalizados com tecnologia de ponta para homens e mulheres em São Paulo
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+                    <a href="#contato" class="btn-primary px-10 py-5 rounded-full text-white font-bold text-lg inline-flex items-center justify-center gap-2">
+                        Agendar Agora
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </a>
+                    <a href="#servicos" class="btn-secondary px-10 py-5 rounded-full text-emerald-600 font-bold text-lg inline-flex items-center justify-center gap-2">
+                        Ver Serviços
+                    </a>
+                </div>
+
+                <!-- Trust Seals -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
+                    <div class="flex flex-col items-center gap-3">
+                        <div class="seal-icon w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center">
+                            <svg class="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <span class="text-gray-700 font-semibold">Atendimento em 24h</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-3">
+                        <div class="seal-icon w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center" style="animation-delay: 0.3s">
+                            <svg class="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
+                        </div>
+                        <span class="text-gray-700 font-semibold">Profissionais Certificados</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-3">
+                        <div class="seal-icon w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center" style="animation-delay: 0.6s">
+                            <svg class="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                        </div>
+                        <span class="text-gray-700 font-semibold">Garantia de Satisfação</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="py-24 px-6 bg-white" id="como-funciona">
+        <div class="max-w-7xl mx-auto fade-in-up" style="animation-delay: 0.2s">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-black text-gray-900 mb-4">Como Funciona</h2>
+                <p class="text-xl text-gray-600">Apenas 3 passos simples para transformar sua aparência</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="card-hover relative bg-white rounded-3xl p-10 border-2 border-gray-100 shadow-lg">
+                    <div class="text-8xl font-black text-emerald-50 absolute top-4 right-6">01</div>
+                    <div class="text-6xl mb-6 relative z-10">📅</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 relative z-10">Agendamento Online</h3>
+                    <p class="text-gray-600 leading-relaxed relative z-10">Escolha o melhor horário e confirme seu agendamento em segundos</p>
+                </div>
+                <div class="card-hover relative bg-white rounded-3xl p-10 border-2 border-gray-100 shadow-lg">
+                    <div class="text-8xl font-black text-emerald-50 absolute top-4 right-6">02</div>
+                    <div class="text-6xl mb-6 relative z-10">🔍</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 relative z-10">Avaliação Personalizada</h3>
+                    <p class="text-gray-600 leading-relaxed relative z-10">Nossa especialista analisa sua pele e cria um plano exclusivo para você</p>
+                </div>
+                <div class="card-hover relative bg-white rounded-3xl p-10 border-2 border-gray-100 shadow-lg">
+                    <div class="text-8xl font-black text-emerald-50 absolute top-4 right-6">03</div>
+                    <div class="text-6xl mb-6 relative z-10">✨</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 relative z-10">Transformação</h3>
+                    <p class="text-gray-600 leading-relaxed relative z-10">Inicie seu tratamento e veja resultados reais em poucos dias</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="py-24 px-6 bg-gradient-to-br from-gray-50 to-emerald-50" id="servicos">
+        <div class="max-w-7xl mx-auto fade-in-up" style="animation-delay: 0.3s">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-black text-gray-900 mb-4">Nossos Pacotes</h2>
+                <p class="text-xl text-gray-600">Escolha o plano ideal para sua transformação</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Básico -->
+                <div class="card-hover relative bg-white rounded-3xl p-8 border-2 border-gray-200 shadow-lg">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Básico</h3>
+                        <div class="text-5xl font-black text-emerald-600 mb-2">R$ 297</div>
+                        <div class="text-gray-500">por tratamento</div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <span class="text-gray-700">1 Sessão de Limpeza</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <span class="text-gray-700">Avaliação Inicial</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <span class="text-gray-700">Hidratação Profunda</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <span class="text-gray-700">Produtos Básicos</span>
+                        </li>
+                    </ul>
+                    <a href="#contato" class="btn-secondary block text-center py-4 rounded-full font-bold text-emerald-600">
+                        Quero este
+                    </a>
+                </div>
+
+                <!-- Padrão (Popular) -->
+                <div class="card-hover relative bg-white rounded-3xl p-8 border-4 border-emerald-500 shadow-2xl md:scale-105">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-emerald-500 text-white px-6 py-2 rounded-full font-bold text-sm">
+                        MAIS ESCOLHIDO
+                    </div>
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Padrão</h3>
+                        <div class="text-5xl font-black text-emerald-600 mb-2">R$ 697</div>
+                        <div class="text-gray-500">por tratamento</div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <span class="text-gray-700">3 Sessões Completas</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <span class="text-gray-700">Peeling Químico</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <span class="text-gray-700">Microagulhamento</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <span class="text-gray-700">Kit de Produtos</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <span class="text-gray-700">Acompanhamento Online</span>
+                        </li>
+                    </ul>
+                    <a href="#contato" class="btn-primary block text-center py-4 rounded-full font-bold text-white">
+                        Quero este
+                    </a>
+                </div>
+
+                <!-- Premium -->
+                <div class="card-hover relative bg-white rounded-3xl p-8 border-2 border-gray-200 shadow-lg">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Premium</h3>
+                        <div class="text-5xl font-black text-emerald-600 mb-2">R$ 1.497</div>
+                        <div class="text-gray-500">por tratamento</div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <span class="text-gray-700">6 Sessões VIP</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <span class="text-gray-700">Laser Facial</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <span class="text-gray-700">Bioestimulador</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <span class="text-gray-700">Kit Premium Completo</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <span class="text-gray-700">Consultas Ilimitadas</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <span class="text-gray-700">Resultados Garantidos</span>
+                        </li>
+                    </ul>
+                    <a href="#contato" class="btn-secondary block text-center py-4 rounded-full font-bold text-emerald-600">
+                        Quero este
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL PROOF -->
+    <section class="py-24 px-6 bg-white">
+        <div class="max-w-7xl mx-auto fade-in-up" style="animation-delay: 0.4s">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-black text-gray-900 mb-4">O Que Dizem Nossos Clientes</h2>
+                <p class="text-xl text-gray-600">Depoimentos reais de quem transformou a vida</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <div class="card-hover bg-gray-50 rounded-3xl p-8 border border-gray-200">
+                    <div class="flex gap-1 mb-4">
+                        <svg class="w-5 h-5 text-yellow-400 fill-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400 fill-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400 fill-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400 fill-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400 fill-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <p class="text-gray-700 mb-6 leading-relaxed italic">"Minha pele nunca esteve tão bonita! O tratamento superou todas minhas expectativas. Equipe incrível!"</p>
+                    <div class="font-bold text-gray-900">Mariana Silva</div>
+                    <div class="text-sm text-gray-500">Cliente verificado</div>
+                </div>
+                <div class="card-hover bg-gray-50 rounded-3xl p-8 border border-gray-200">
+                    <div class="flex gap-1 mb-4">
+                        <svg class="w-5 h-5 text-yellow-400 fill-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400 fill-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400 fill-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400 fill-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400 fill-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <p class="text-gray-700 mb-6 leading-relaxed italic">"Profissionalismo do início ao fim. Resultados visíveis já na segunda sessão. Super recomendo!"</p>
+                    <div class="font-bold text-gray-900">Carlos Oliveira</div>
+                    <div class="text-sm text-gray-500">Cliente verificado</div>
+                </div>
+                <div class="card-hover bg-gray-50 rounded-3xl p-8 border border-gray-200">
+                    <div class="flex gap-1 mb-4">
+                        <svg class="w-5 h-5 text-yellow-400 fill-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400 fill-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400 fill-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400 fill-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400 fill-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <p class="text-gray-700 mb-6 leading-relaxed italic">"Melhor investimento que fiz em mim mesma. Autoestima lá em cima! Gratidão eterna a toda equipe."</p>
+                    <div class="font-bold text-gray-900">Juliana Costa</div>
+                    <div class="text-sm text-gray-500">Cliente verificado</div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto text-center">
+                <div>
+                    <div class="text-5xl font-black text-emerald-600 mb-2">1.200+</div>
+                    <div class="text-gray-600 font-semibold">Clientes Atendidos</div>
+                </div>
+                <div>
+                    <div class="text-5xl font-black text-emerald-600 mb-2">4.9/5</div>
+                    <div class="text-gray-600 font-semibold">Avaliação Média</div>
+                </div>
+                <div>
+                    <div class="text-5xl font-black text-emerald-600 mb-2">98%</div>
+                    <div class="text-gray-600 font-semibold">Satisfação</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BEFORE/AFTER -->
+    <section class="py-24 px-6 bg-gradient-to-br from-emerald-50 to-white">
+        <div class="max-w-7xl mx-auto fade-in-up" style="animation-delay: 0.5s">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-black text-gray-900 mb-4">Resultados Reais</h2>
+                <p class="text-xl text-gray-600">Transformações que falam por si</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card-hover bg-white rounded-3xl overflow-hidden shadow-lg">
+                    <div class="aspect-square bg-gradient-to-br from-emerald-100 to-emerald-200 flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="text-6xl mb-4">✨</div>
+                            <div class="text-emerald-700 font-bold text-lg">Antes → Depois</div>
+                        </div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <div class="font-bold text-gray-900 mb-2">Tratamento 1</div>
+                        <div class="text-sm text-gray-500 italic">Exemplo demonstrativo</div>
+                    </div>
+                </div>
+                <div class="card-hover bg-white rounded-3xl overflow-hidden shadow-lg">
+                    <div class="aspect-square bg-gradient-to-br from-emerald-100 to-emerald-200 flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="text-6xl mb-4">✨</div>
+                            <div class="text-emerald-700 font-bold text-lg">Antes → Depois</div>
+                        </div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <div class="font-bold text-gray-900 mb-2">Tratamento 2</div>
+                        <div class="text-sm text-gray-500 italic">Exemplo demonstrativo</div>
+                    </div>
+                </div>
+                <div class="card-hover bg-white rounded-3xl overflow-hidden shadow-lg">
+                    <div class="aspect-square bg-gradient-to-br from-emerald-100 to-emerald-200 flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="text-6xl mb-4">✨</div>
+                            <div class="text-emerald-700 font-bold text-lg">Antes → Depois</div>
+                        </div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <div class="font-bold text-gray-900 mb-2">Tratamento 3</div>
+                        <div class="text-sm text-gray-500 italic">Exemplo demonstrativo</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-24 px-6 bg-white">
+        <div class="max-w-4xl mx-auto fade-in-up" style="animation-delay: 0.6s">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-black text-gray-900 mb-4">Dúvidas Frequentes</h2>
+                <p class="text-xl text-gray-600">Tudo que você precisa saber</p>
+            </div>
+
+            <div class="space-y-4">
+                <div class="border-2 border-gray-200 rounded-2xl overflow-hidden bg-white">
+                    <button onclick="toggleFaq(0)" class="faq-button w-full px-8 py-6 flex items-center justify-between text-left hover:bg-gray-50 transition-colors">
+                        <span class="font-bold text-gray-900 text-lg pr-4">Quanto tempo dura cada sessão?</span>
+                        <svg class="faq-icon w-6 h-6 text-emerald-600 flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="px-8 pb-6 text-gray-600 leading-relaxed">
+                            Cada sessão dura entre 60 a 90 minutos, dependendo do tratamento escolhido. Garantimos conforto e atenção total durante todo o procedimento.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border-2 border-gray-200 rounded-2xl overflow-hidden bg-white">
+                    <button onclick="toggleFaq(1)" class="faq-button w-full px-8 py-6 flex items-center justify-between text-left hover:bg-gray-50 transition-colors">
+                        <span class="font-bold text-gray-900 text-lg pr-4">Os resultados são permanentes?</span>
+                        <svg class="faq-icon w-6 h-6 text-emerald-600 flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="px-8 pb-6 text-gray-600 leading-relaxed">
+                            Os resultados variam conforme o tratamento. Alguns oferecem resultados de longo prazo com manutenção periódica, enquanto outros proporcionam melhorias progressivas e duradouras.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border-2 border-gray-200 rounded-2xl overflow-hidden bg-white">
+                    <button onclick="toggleFaq(2)" class="faq-button w-full px-8 py-6 flex items-center justify-between text-left hover:bg-gray-50 transition-colors">
+                        <span class="font-bold text-gray-900 text-lg pr-4">Há alguma contraindicação?</span>
+                        <svg class="faq-icon w-6 h-6 text-emerald-600 flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="px-8 pb-6 text-gray-600 leading-relaxed">
+                            Durante a avaliação inicial, nossa especialista verifica seu histórico de saúde para garantir que o tratamento seja 100% seguro e adequado para você.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border-2 border-gray-200 rounded-2xl overflow-hidden bg-white">
+                    <button onclick="toggleFaq(3)" class="faq-button w-full px-8 py-6 flex items-center justify-between text-left hover:bg-gray-50 transition-colors">
+                        <span class="font-bold text-gray-900 text-lg pr-4">Posso fazer mais de um tratamento simultaneamente?</span>
+                        <svg class="faq-icon w-6 h-6 text-emerald-600 flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="px-8 pb-6 text-gray-600 leading-relaxed">
+                            Sim! Muitos clientes combinam tratamentos para resultados ainda mais expressivos. Nossa equipe cria um protocolo personalizado ideal para seu caso.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border-2 border-gray-200 rounded-2xl overflow-hidden bg-white">
+                    <button onclick="toggleFaq(4)" class="faq-button w-full px-8 py-6 flex items-center justify-between text-left hover:bg-gray-50 transition-colors">
+                        <span class="font-bold text-gray-900 text-lg pr-4">Como funciona a garantia de satisfação?</span>
+                        <svg class="faq-icon w-6 h-6 text-emerald-600 flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="px-8 pb-6 text-gray-600 leading-relaxed">
+                            Se você não ficar satisfeito com os resultados, oferecemos sessões adicionais ou outras opções de tratamento sem custo extra. Sua satisfação é nossa prioridade.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="py-24 px-6 bg-gradient-to-br from-emerald-600 to-emerald-700" id="contato">
+        <div class="max-w-5xl mx-auto fade-in-up" style="animation-delay: 0.7s">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-black text-white mb-4">Agende Sua Transformação</h2>
+                <p class="text-xl text-emerald-100">Preencha o formulário e nossa equipe entrará em contato</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <form onsubmit="handleFormSubmit(event)" class="space-y-6">
+                        <div>
+                            <label for="nome" class="block text-white font-semibold mb-2">Nome Completo *</label>
+                            <input type="text" id="nome" required class="w-full px-6 py-4 rounded-xl border-2 border-emerald-400 focus:border-white focus:outline-none transition-colors" placeholder="Seu nome">
+                        </div>
+                        <div>
+                            <label for="telefone" class="block text-white font-semibold mb-2">Telefone *</label>
+                            <input type="tel" id="telefone" required class="w-full px-6 py-4 rounded-xl border-2 border-emerald-400 focus:border-white focus:outline-none transition-colors" placeholder="(11) 98765-4321">
+                        </div>
+                        <div>
+                            <label for="mensagem" class="block text-white font-semibold mb-2">Mensagem</label>
+                            <textarea id="mensagem" rows="4" class="w-full px-6 py-4 rounded-xl border-2 border-emerald-400 focus:border-white focus:outline-none transition-colors resize-none" placeholder="Conte-nos sobre suas necessidades..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-white text-emerald-600 font-bold py-5 rounded-xl hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg">
+                            Enviar Solicitação
+                        </button>
+                    </form>
+                </div>
+
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-6">Ou fale conosco diretamente</h3>
+                        <button onclick="handleWhatsApp()" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-5 rounded-xl transition-all transform hover:scale-105 shadow-lg flex items-center justify-center gap-3">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                            WhatsApp - Atendimento Rápido
+                        </button>
+                    </div>
+
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 space-y-4">
+                        <div class="flex items-start gap-4">
+                            <svg class="w-6 h-6 text-emerald-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            <div class="text-white">
+                                <div class="font-semibold mb-1">Endereço</div>
+                                <div class="text-emerald-100">Av. Paulista, 1000 - São Paulo, SP</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <svg class="w-6 h-6 text-emerald-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <div class="text-white">
+                                <div class="font-semibold mb-1">Horário</div>
+                                <div class="text-emerald-100">Seg-Sex: 9h às 19h | Sáb: 9h às 14h</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <svg class="w-6 h-6 text-emerald-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            <div class="text-white">
+                                <div class="font-semibold mb-1">Email</div>
+                                <div class="text-emerald-100">contato@exemplo.com</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-gray-300 py-12 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <div>
+                    <div class="text-2xl font-black text-white mb-4">Estética Avançada</div>
+                    <p class="text-gray-400 leading-relaxed">
+                        Transformando vidas através da beleza e autoestima desde 2020.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#servicos" class="hover:text-emerald-400 transition-colors">Serviços</a></li>
+                        <li><a href="#como-funciona" class="hover:text-emerald-400 transition-colors">Como Funciona</a></li>
+                        <li><a href="#contato" class="hover:text-emerald-400 transition-colors">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-emerald-400 transition-colors">Termos de Uso</a></li>
+                        <li><a href="#" class="hover:text-emerald-400 transition-colors">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8">
+                <div class="text-center space-y-2">
+                    <p class="text-sm text-gray-500 italic">
+                        📋 Projeto demonstrativo de portfólio. Conteúdos e resultados são ilustrativos.
+                    </p>
+                    <p class="text-sm">
+                        Desenvolvido por <a href="https://twitter.com/ojaimevitor" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 font-semibold">@ojaimevitor</a> — © 2026
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Disable right-click
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+
+        // Console watermark
+        console.log('%c© 2026 @ojaimevitor — Landing Page Premium', 'font-size: 16px; color: #10b981; font-weight: bold;');
+
+        // FAQ Accordion
+        let currentOpenFaq = null;
+        
+        function toggleFaq(index) {
+            const allFaqs = document.querySelectorAll('.faq-answer');
+            const allIcons = document.querySelectorAll('.faq-icon');
+            const targetFaq = allFaqs[index];
+            const targetIcon = allIcons[index];
+            
+            if (currentOpenFaq === index) {
+                targetFaq.classList.remove('open');
+                targetIcon.style.transform = 'rotate(0deg)';
+                currentOpenFaq = null;
+            } else {
+                // Close previously open FAQ
+                if (currentOpenFaq !== null) {
+                    allFaqs[currentOpenFaq].classList.remove('open');
+                    allIcons[currentOpenFaq].style.transform = 'rotate(0deg)';
+                }
+                // Open clicked FAQ
+                targetFaq.classList.add('open');
+                targetIcon.style.transform = 'rotate(180deg)';
+                currentOpenFaq = index;
+            }
+        }
+
+        // Form submission handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            alert('📋 Projeto demonstrativo — formulário real será configurado no seu site.');
+        }
+
+        // WhatsApp handler
+        function handleWhatsApp() {
+            alert('💬 Botão WhatsApp demonstrativo — número real será configurado no seu site.');
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+
+</body>
+</html>
